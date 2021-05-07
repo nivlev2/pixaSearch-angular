@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ApiServiceService } from './api-service.service';
-
+import {sortBy} from 'lodash'
 @Injectable({
   providedIn: 'root'
 })
@@ -20,5 +20,9 @@ export class PixaServiceService {
       console.log(data.hits);
       
     })
+   }
+   sortImages(keyS:any):any{
+     let sortedArr = sortBy(keyS,this.images_ar)
+     this.images_ar.splice(0,this.images_ar.length,...sortedArr)
    }
 }
