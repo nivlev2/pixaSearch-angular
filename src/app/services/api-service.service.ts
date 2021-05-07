@@ -8,7 +8,7 @@ export class ApiServiceService {
   constructor(private http: HttpClient) { 
 
   }
-  doApiget:void(url:any) {
-    this.http.get(url)
+  doApiget(url:string):any {
+    return this.http.get(url)
   }
 }
