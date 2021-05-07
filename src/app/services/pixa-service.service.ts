@@ -6,12 +6,19 @@ import { ApiServiceService } from './api-service.service';
 })
 export class PixaServiceService {
   images_ar:any[] = [];
-  constructor(private pixaSer:ApiServiceService) {
+  constructor(private apiSer:ApiServiceService) {
 
    }
    getImages():any {
-    this.images_ar = this.pixaSer.doApiget("https://pixabay.com/api/?key=15489555-318fcca1200a48f374a1ce3ea&q=yellow+flowers&image_type=photo&pretty=true");
-    console.log(this.images_ar);
-    
+     return this.images_ar;
+   }
+
+   doApiImages(_url:string):void {
+    this.images_ar.splice(0,this.images_ar.length)
+    this.apiSer.doApiget(_url).subscribe((data:any) => {
+      this.images_ar.push(...data.hits)
+      console.log(data.hits);
+      
+    })
    }
 }

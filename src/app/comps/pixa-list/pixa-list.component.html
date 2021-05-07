@@ -1,6 +1,11 @@
 <div class="container">
-    <div class="row">
-        <div class="col-lg-6">
+    <div class="row ">
+        <div class="col-lg-6 border p-2" *ngFor="let item of imagesAr">
+            <img class="img-responsive w-25 float-start" src="{{item.largeImageURL}}" alt="">
+            <h4 class="">{{item.tags}}</h4>
+
+            <p>Likes:{{item.likes}}</p>
+            <button class="btn btn-info mx-2">more info</button>
             
         </div>
     </div>
