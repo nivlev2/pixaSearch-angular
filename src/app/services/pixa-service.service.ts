@@ -22,7 +22,17 @@ export class PixaServiceService {
     })
    }
    sortImages(keyS:any):any{
-     let sortedArr = sortBy(keyS,this.images_ar)
-     this.images_ar.splice(0,this.images_ar.length,...sortedArr)
+     let sortedArr = sortBy(this.images_ar,keyS)
+     console.log(sortedArr);
+     if(keyS === 'likes'){
+      this.images_ar.splice(0,this.images_ar.length,...sortedArr.reverse())
+
+     }else{
+      this.images_ar.splice(0,this.images_ar.length,...sortedArr)
+     }
+
+    //  this.images_ar.push()
+     console.log(this.images_ar);
+     
    }
 }
