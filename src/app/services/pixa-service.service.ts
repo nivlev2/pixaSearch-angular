@@ -17,13 +17,11 @@ export class PixaServiceService {
     this.images_ar.splice(0,this.images_ar.length)
     this.apiSer.doApiget(_url).subscribe((data:any) => {
       this.images_ar.push(...data.hits)
-      console.log(data.hits);
       
     })
    }
    sortImages(keyS:any):any{
      let sortedArr = sortBy(this.images_ar,keyS)
-     console.log(sortedArr);
      if(keyS === 'likes'){
       this.images_ar.splice(0,this.images_ar.length,...sortedArr.reverse())
 
@@ -32,7 +30,6 @@ export class PixaServiceService {
      }
 
     //  this.images_ar.push()
-     console.log(this.images_ar);
      
    }
 }

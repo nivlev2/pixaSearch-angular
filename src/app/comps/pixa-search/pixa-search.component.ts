@@ -17,7 +17,6 @@ export class PixaSearchComponent implements OnInit {
     this.pixaSer.doApiImages(`https://pixabay.com/api/?key=15489555-318fcca1200a48f374a1ce3ea&q=${this.inputSearch}&image_type=photo&pretty=true`)
   }
   sortImages():void{
-    console.log(this.sortKey);
     
     this.pixaSer.sortImages(this.sortKey)
   }
