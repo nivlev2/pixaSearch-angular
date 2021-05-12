@@ -22,6 +22,7 @@ export class PixaServiceService {
    }
    sortImages(keyS:any):any{
      let sortedArr = sortBy(this.images_ar,keyS)
+     // i wanted that the likes will be sorted from high to low
      if(keyS === 'likes'){
       this.images_ar.splice(0,this.images_ar.length,...sortedArr.reverse())
 
@@ -29,7 +30,6 @@ export class PixaServiceService {
       this.images_ar.splice(0,this.images_ar.length,...sortedArr)
      }
 
-    //  this.images_ar.push()
      
    }
 }
